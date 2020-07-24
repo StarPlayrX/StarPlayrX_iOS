@@ -90,12 +90,11 @@ final class Player {
                 p.insert(playItem, after: nil)
                 p.currentItem?.preferredForwardBufferDuration = 0
                 p.currentItem?.automaticallyPreservesTimeOffsetFromLive = true
-                p.currentItem?.canUseNetworkResourcesForLiveStreamingWhilePaused = true
+                p.currentItem?.canUseNetworkResourcesForLiveStreamingWhilePaused = false
                 p.automaticallyWaitsToMinimizeStalling = true
-                p.appliesMediaSelectionCriteriaAutomatically = true
+                p.appliesMediaSelectionCriteriaAutomatically = false
                 p.allowsExternalPlayback = false
                 
-                p.playImmediately(atRate: 1.0)
 
                DispatchQueue.main.asyncAfter(deadline: .now() + (avSession.outputLatency * 0.8))  { [weak self] in
                     guard let self = self else { return }
@@ -104,8 +103,9 @@ final class Player {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + avSession.outputLatency * 2.0) { [weak self] in
                     self?.player.currentItem?.preferredForwardBufferDuration = 1
-                    self?.state = .playing
                     NotificationCenter.default.post(name: .didUpdatePlay, object: nil)
+                    p.playImmediately(atRate: 1.0)
+                    self?.state = .playing
                 }
             }
         }
@@ -138,15 +138,17 @@ final class Player {
         let p = self.player
         
         p.currentItem?.preferredForwardBufferDuration = 0
-        p.currentItem?.automaticallyPreservesTimeOffsetFromLive = true
-        p.currentItem?.canUseNetworkResourcesForLiveStreamingWhilePaused = true
-        p.automaticallyWaitsToMinimizeStalling = true
-        p.appliesMediaSelectionCriteriaAutomatically = true
-        p.allowsExternalPlayback = false
+        p.automaticallyWaitsToMinimizeStalling = false
+	
+        print(avSession.outputLatency )
+        DispatchQueue.main.asyncAfter(deadline: .now() + avSession.outputLatency ) { [weak self] in
+                self?.player.currentItem?.preferredForwardBufferDuration = 1
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + avSession.outputLatency * 2.0) { [weak self] in
-            self?.player.currentItem?.preferredForwardBufferDuration = 1
-        }
+                p.playImmediately(atRate: 1.0)
+            }
+       
+        
+        
     }
     
     func runReset(starplayrx: AVPlayerItem) {
@@ -487,7 +489,7 @@ final class Player {
     
     ///These are used on the iPhone's lock screen
     ///Command Center routines
-    func setupRemoteTransportControls(application: UIApplication) {
+    func setupRemoteTransportControls() {
         do {
             avSession.accessibilityPerformMagicTap()
             avSession.accessibilityActivate()

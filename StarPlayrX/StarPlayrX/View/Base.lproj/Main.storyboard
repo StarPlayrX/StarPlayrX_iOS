@@ -121,22 +121,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RZ-Xg-HxG">
-                                <rect key="frame" x="146.66666666666666" y="448" width="120.99999999999997" height="30"/>
-                                <state key="normal" title="Try SiriusXM Free">
+                                <rect key="frame" x="14" y="448" width="380" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Try Sirius Radio Free">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="Trial:" destination="9pv-A4-QxB" eventType="touchUpInside" id="lV5-e0-awG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requires a streaming SXM account." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzy-5m-lYo">
-                                <rect key="frame" x="24" y="423" width="366" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzy-5m-lYo">
+                                <rect key="frame" x="24" y="423" width="366" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-zh-enx">
-                                <rect key="frame" x="24" y="762" width="366" height="30"/>
+                                <rect key="frame" x="20" y="757" width="374" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="StarPlayrX.com">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -144,37 +146,60 @@
                                     <action selector="starplayrx_dot_com:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vuz-Qs-eFO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wd-Em-Pmo">
+                                <rect key="frame" x="20" y="666" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tip via PayPal">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tip_jar_paypal:" destination="9pv-A4-QxB" eventType="touchUpInside" id="c9k-Kl-0Qv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2020 NiceMac LLC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dz-5i-EsE">
+                                <rect key="frame" x="20" y="720" width="374" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.161913842" green="0.16441595549999999" blue="0.18955627080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9dz-5i-EsE" firstAttribute="trailing" secondItem="h7w-zh-enx" secondAttribute="trailing" id="1Bm-mZ-BB3"/>
                             <constraint firstItem="erh-Ga-kQF" firstAttribute="leading" secondItem="xlc-aG-8L5" secondAttribute="leading" id="35s-6U-vsd"/>
                             <constraint firstItem="dZs-bB-A2a" firstAttribute="trailing" secondItem="xlc-aG-8L5" secondAttribute="trailing" id="3sY-8N-wmb"/>
-                            <constraint firstItem="Vzy-5m-lYo" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="24" id="7VU-em-lEo"/>
                             <constraint firstItem="meb-HX-sqc" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="88u-uA-hMK"/>
-                            <constraint firstItem="h7w-zh-enx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kba-hP-d4k" secondAttribute="trailing" id="Bsi-pm-EZ1"/>
+                            <constraint firstItem="Vzy-5m-lYo" firstAttribute="top" secondItem="dZs-bB-A2a" secondAttribute="bottom" constant="33" id="9wK-wI-6DO"/>
                             <constraint firstItem="xlc-aG-8L5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kba-hP-d4k" secondAttribute="trailing" id="CIb-mC-ipm"/>
-                            <constraint firstItem="0RZ-Xg-HxG" firstAttribute="top" secondItem="Vzy-5m-lYo" secondAttribute="bottom" constant="5" id="Dyl-6g-fjB"/>
+                            <constraint firstItem="5wd-Em-Pmo" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="D7H-r5-nYs"/>
+                            <constraint firstItem="Vzy-5m-lYo" firstAttribute="trailing" secondItem="dZs-bB-A2a" secondAttribute="trailing" id="Eu9-e3-lac"/>
                             <constraint firstItem="yyM-xm-Ah0" firstAttribute="leading" secondItem="meb-HX-sqc" secondAttribute="leading" id="FYA-gH-j0g"/>
                             <constraint firstItem="yyM-xm-Ah0" firstAttribute="trailing" secondItem="meb-HX-sqc" secondAttribute="trailing" id="HAl-wX-pQZ"/>
+                            <constraint firstItem="0RZ-Xg-HxG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="14" id="IJK-Zu-1Wj"/>
                             <constraint firstItem="meb-HX-sqc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kba-hP-d4k" secondAttribute="trailing" id="JBu-gj-l5F"/>
-                            <constraint firstItem="h7w-zh-enx" firstAttribute="leading" secondItem="Kba-hP-d4k" secondAttribute="leading" id="Nhi-lz-EVh"/>
-                            <constraint firstItem="Vzy-5m-lYo" firstAttribute="top" secondItem="dZs-bB-A2a" secondAttribute="bottom" constant="33" id="Nwg-TZ-7FI"/>
                             <constraint firstItem="xlc-aG-8L5" firstAttribute="top" secondItem="erh-Ga-kQF" secondAttribute="bottom" constant="20" id="Olp-Y4-O1A"/>
-                            <constraint firstItem="Vzy-5m-lYo" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="R1E-sR-7tb"/>
+                            <constraint firstItem="Vzy-5m-lYo" firstAttribute="leading" secondItem="dZs-bB-A2a" secondAttribute="leading" id="PGh-0b-eU9"/>
+                            <constraint firstItem="5wd-Em-Pmo" firstAttribute="trailing" secondItem="9dz-5i-EsE" secondAttribute="trailing" id="RGA-Eo-1gR"/>
                             <constraint firstItem="xlc-aG-8L5" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="U2d-Di-DVy"/>
+                            <constraint firstItem="0RZ-Xg-HxG" firstAttribute="top" secondItem="Vzy-5m-lYo" secondAttribute="bottom" constant="25" id="W6q-L6-jq3"/>
                             <constraint firstItem="erh-Ga-kQF" firstAttribute="trailing" secondItem="xlc-aG-8L5" secondAttribute="trailing" id="akv-Vc-3TV"/>
                             <constraint firstItem="meb-HX-sqc" firstAttribute="top" secondItem="yyM-xm-Ah0" secondAttribute="bottom" constant="8" symbolic="YES" id="bfE-ZP-i0a"/>
                             <constraint firstItem="yyM-xm-Ah0" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="13" id="bmV-UZ-FgE"/>
+                            <constraint firstItem="9dz-5i-EsE" firstAttribute="top" secondItem="5wd-Em-Pmo" secondAttribute="bottom" constant="18" id="brR-9Y-lgf"/>
                             <constraint firstItem="xlc-aG-8L5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kba-hP-d4k" secondAttribute="leading" id="dXJ-E7-E38"/>
+                            <constraint firstItem="5wd-Em-Pmo" firstAttribute="leading" secondItem="9dz-5i-EsE" secondAttribute="leading" id="dmB-su-78x"/>
                             <constraint firstItem="dZs-bB-A2a" firstAttribute="top" secondItem="xlc-aG-8L5" secondAttribute="bottom" constant="23" id="eT9-Nr-MDp"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="h7w-zh-enx" secondAttribute="bottom" constant="21" id="fgU-my-aJ1"/>
+                            <constraint firstItem="h7w-zh-enx" firstAttribute="centerX" secondItem="Kba-hP-d4k" secondAttribute="centerX" id="gbZ-ux-ZPE"/>
                             <constraint firstItem="meb-HX-sqc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="24" id="hWv-Ff-gb2"/>
-                            <constraint firstItem="0RZ-Xg-HxG" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="kV0-Wb-6r5"/>
+                            <constraint firstItem="9dz-5i-EsE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h7w-zh-enx" secondAttribute="leading" id="nKC-0L-OLn"/>
+                            <constraint firstItem="0RZ-Xg-HxG" firstAttribute="trailing" secondItem="5wd-Em-Pmo" secondAttribute="trailing" id="pGq-Kd-pbp"/>
                             <constraint firstAttribute="bottom" secondItem="Kba-hP-d4k" secondAttribute="bottom" constant="20" symbolic="YES" id="pKF-EA-3RK"/>
                             <constraint firstItem="Kba-hP-d4k" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="pKZ-Ng-VFU"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="h7w-zh-enx" secondAttribute="bottom" constant="21" id="qsO-vS-xWp"/>
                             <constraint firstItem="dZs-bB-A2a" firstAttribute="leading" secondItem="xlc-aG-8L5" secondAttribute="leading" id="uto-Zy-7FM"/>
                             <constraint firstItem="xlc-aG-8L5" firstAttribute="top" secondItem="meb-HX-sqc" secondAttribute="bottom" constant="76" id="wad-dw-J9F"/>
                             <constraint firstItem="meb-HX-sqc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kba-hP-d4k" secondAttribute="leading" id="wba-Mu-482"/>
+                            <constraint firstItem="h7w-zh-enx" firstAttribute="top" secondItem="9dz-5i-EsE" secondAttribute="bottom" constant="17" id="y6o-GO-KfV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -191,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="522"/>
+            <point key="canvasLocation" x="-613.04347826086962" y="521.65178571428567"/>
         </scene>
         <!--Player-->
         <scene sceneID="cu1-5r-Bbj">
@@ -280,13 +305,13 @@
                         <color key="sectionIndexColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" id="Xfl-bD-RZD">
+                        <searchBar key="tableHeaderView" contentMode="scaleAspectFill" barStyle="blackTranslucent" placeholder="Search" translucent="NO" id="Xfl-bD-RZD">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.161913842" green="0.16441595549999999" blue="0.18955627080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="barTintColor" red="0.161913842" green="0.16441595549999999" blue="0.18955627080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ZhS-CZ-F1K" detailTextLabel="hkb-MZ-HfO" style="IBUITableViewCellStyleSubtitle" id="8Q8-T9-1mB">

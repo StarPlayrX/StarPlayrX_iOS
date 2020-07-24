@@ -10,10 +10,6 @@
 import UIKit
 import AVKit
 
-#if !targetEnvironment(simulator)
-import GTCola
-#endif
-
 //UIGestureRecognizerDelegate
 class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
     
@@ -190,25 +186,12 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
             VolumeSlider.setValue(value, animated: true)
             self.setSpeakers(value: value)
         }
-    #if targetEnvironment(simulator)
         runsimulation()
-    #else
-        if let ap2 = GTCola.shared(), !g.demomode {
-            ap2.hud(false) //Disable HUD on this view
-            systemVolumeUpdater()
-            setSpeakers(value: ap2.getSoda())
-        } else {
-            runsimulation()
-        }
-    #endif
+
     }
     
     func shutdownVolume() {
-            #if !targetEnvironment(simulator)
-            if !g.demomode {
-                GTCola.shared().hud(true) //Enable HUD on this view
-            }
-            #endif
+            
     }
     
     @objc func OnDidUpdatePlay(){
@@ -456,13 +439,7 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         if let _  = Artist?.text?.isEmpty {
             Player.shared.syncArt()
         }
-        
-        #if !targetEnvironment(simulator)
-        	if !g.demomode {
-        	    VolumeSlider.setValue(GTCola.shared().getSoda(), animated: false)
-        	}
-        #endif
-        
+    
         title = g.currentChannelName
         startup()
         checkForAllStar()
@@ -542,16 +519,8 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
                         let value = slider.value
                         self.setSpeakers(value: value)
 
-                        #if targetEnvironment(simulator)
-                        	Player.shared.player.volume = value
-                        #else
-                        	// your real device code
-                        if !self.g.demomode {
-                            GTCola.shared().setSoda(value)
-                        } else {
-                            Player.shared.player.volume = value
-                        }
-                        #endif
+                        Player.shared.player.volume = value
+
                 	}
                 case .ended:
                     setVolumeObserver()
@@ -580,15 +549,7 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
             
             if Player.shared.avSession.currentRoute.outputs.first?.portType == .airPlay {
                 
-                #if !targetEnvironment(simulator)
-                if !g.demomode {
-                    let vol = GTCola.shared()?.getSoda()
-                    if vol == volume {
-                        return
-                    }
-                }
-                #endif
-                
+            
             }
             
             
@@ -657,20 +618,8 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         if tabBarController?.tabBar.selectedItem?.title == channelString && title == g.currentChannelName {
             if Player.shared.avSession.currentRoute.outputs.first?.portType == .airPlay {
                 
-                #if !targetEnvironment(simulator)
-                if !g.demomode {
-                    GTCola.shared().setSodaBy(0.0)
-                }
-                #endif
-                
             } else {
-                #if !targetEnvironment(simulator)
-                if let vol = GTCola.shared()?.getSoda(), !g.demomode {
-                    DispatchQueue.main.async {
-                        self.VolumeSlider.setValue(vol, animated: true)
-                    }
-                }
-                #endif
+               
             }
             
             isSliderEnabled()

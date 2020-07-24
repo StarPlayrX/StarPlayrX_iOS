@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return .lightContent // .default
     }
     
+    
+   
+
+    
     //MARK: To do — See if iPhone 7 plays upside down
     /*func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         
@@ -51,11 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         selectedView.backgroundColor = UIColor(displayP3Red: 20 / 255, green: 22 / 255, blue: 24 / 255, alpha: 1.0)
         UITableViewCell.appearance().selectedBackgroundView = selectedView
         
-        Player.shared.setupRemoteTransportControls(application: application)
         application.beginReceivingRemoteControlEvents()
         
+        
+
         return true
     }
+   
 
     // MARK: UISceneSession Lifecycle
 

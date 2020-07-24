@@ -83,7 +83,8 @@ class ChannelsViewController: UITableViewController,UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder() // hides the keyboard.
+        UpdateTableView(scrollPosition: .none)
+        searchBar.resignFirstResponder()
     }
     
     // This method updates filteredData based on the text in the Search Box
@@ -97,9 +98,6 @@ class ChannelsViewController: UITableViewController,UISearchBarDelegate {
             g.SearchText = ""
             g.FilterData = g.ColdFilteredData
         }
-        
-        UpdateTableView(scrollPosition: .none)
-        
     }
     
     private func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -151,7 +149,7 @@ class ChannelsViewController: UITableViewController,UISearchBarDelegate {
     }
     
     @objc func updateChannelsView() {
-        
+        ChannelsTableView.reloadData()
     }
     
     
@@ -202,7 +200,15 @@ class ChannelsViewController: UITableViewController,UISearchBarDelegate {
         super.viewDidLoad()
       
         NotificationCenter.default.addObserver(self, selector: #selector(UpdateTableView), name: .updateChannelsView, object: nil)
+        searchBar.delegate = self
+        let results = UITableViewController(style: .plain)
 
+        let sc = UISearchController(searchResultsController: results)
+
+        sc.obscuresBackgroundDuringPresentation = false
+        sc.automaticallyShowsCancelButton = false
+        sc.hidesNavigationBarDuringPresentation = false
+        
         ChannelsTableView.delegate = self
         UpdateTableView()
         
@@ -210,12 +216,12 @@ class ChannelsViewController: UITableViewController,UISearchBarDelegate {
     
         searchBar.backgroundColor = UIColor(displayP3Red: 20 / 255, green: 22 / 255, blue: 24 / 255, alpha: 1.0)
         searchBar.barTintColor = UIColor(displayP3Red: 41 / 255, green: 42 / 255, blue: 48 / 255, alpha: 1.0)
-        searchBar.delegate = self
         ChannelsTableView.rowHeight = 80
         ChannelsTableView.estimatedRowHeight = 80
 
         searchBar.sizeToFit()
-        
+        searchBar.enablesReturnKeyAutomatically = true
+
         setAllStarButton()
     }
     

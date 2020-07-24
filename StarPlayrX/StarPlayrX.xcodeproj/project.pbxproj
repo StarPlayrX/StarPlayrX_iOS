@@ -19,24 +19,13 @@
 		5F5C5027244CBCD500A35D76 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C5021244CBCD500A35D76 /* SplitViewController.swift */; };
 		5F5C5028244CBCD500A35D76 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C5022244CBCD500A35D76 /* ChannelsViewController.swift */; };
 		5F5C5029244CBCD500A35D76 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C5023244CBCD500A35D76 /* LoginViewController.swift */; };
-		5F5C5044244CC22A00A35D76 /* bluenumbers.dms in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C5042244CC22A00A35D76 /* bluenumbers.dms */; };
-		5F5C5045244CC22A00A35D76 /* demoart.dms in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C5043244CC22A00A35D76 /* demoart.dms */; };
 		5F5C505B244CC26000A35D76 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C5048244CC26000A35D76 /* Player.swift */; };
 		5F5C5060244CC26000A35D76 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C504D244CC26000A35D76 /* Sync.swift */; };
 		5F5C5062244CC26000A35D76 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C504F244CC26000A35D76 /* Extensions.swift */; };
 		5F5C5065244CC26000A35D76 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C5052244CC26000A35D76 /* Global.swift */; };
 		5F5C506A244CC26000A35D76 /* Networkabilty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C5057244CC26000A35D76 /* Networkabilty.swift */; };
-		5F60E3D124BD27620045A0A8 /* GTCola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F60E3D024BD27620045A0A8 /* GTCola.framework */; };
-		5FD58414247057FD00002002 /* CameoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD58413247057FD00002002 /* CameoKit.framework */; };
-		5FD584312470585800002002 /* COpenSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD584162470582C00002002 /* COpenSSL.framework */; };
-		5FD584332470585800002002 /* PerfectCHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD584172470582C00002002 /* PerfectCHTTPParser.framework */; };
-		5FD584352470585800002002 /* PerfectCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD584182470582C00002002 /* PerfectCrypto.framework */; };
-		5FD584372470585800002002 /* PerfectCZlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD584192470582C00002002 /* PerfectCZlib.framework */; };
-		5FD584392470585800002002 /* PerfectHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD5841A2470582C00002002 /* PerfectHTTP.framework */; };
-		5FD5843B2470585800002002 /* PerfectHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD5841B2470582C00002002 /* PerfectHTTPServer.framework */; };
-		5FD5843D2470585800002002 /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD5841C2470582C00002002 /* PerfectLib.framework */; };
-		5FD5843F2470585800002002 /* PerfectNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD5841D2470582C00002002 /* PerfectNet.framework */; };
-		5FD584412470585800002002 /* PerfectThread.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD5841E2470582C00002002 /* PerfectThread.framework */; };
+		5F9F912924C7E171000DC0E1 /* demoart.dms in Resources */ = {isa = PBXBuildFile; fileRef = 5F9F912824C7E171000DC0E1 /* demoart.dms */; };
+		5FB1763B24C668F4004918E4 /* CameoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5FB1763A24C668F4004918E4 /* CameoKit */; };
 		5FDAD9BA2464EFBA008E38A8 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAD9B92464EFBA008E38A8 /* Async.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,26 +44,13 @@
 		5F5C5021244CBCD500A35D76 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		5F5C5022244CBCD500A35D76 /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		5F5C5023244CBCD500A35D76 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		5F5C5042244CC22A00A35D76 /* bluenumbers.dms */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = bluenumbers.dms; sourceTree = "<group>"; };
-		5F5C5043244CC22A00A35D76 /* demoart.dms */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = demoart.dms; sourceTree = "<group>"; };
 		5F5C5048244CC26000A35D76 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5F5C504D244CC26000A35D76 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		5F5C504F244CC26000A35D76 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5F5C5052244CC26000A35D76 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		5F5C5057244CC26000A35D76 /* Networkabilty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkabilty.swift; sourceTree = "<group>"; };
 		5F5C5088244CCAB900A35D76 /* StarPlayrX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarPlayrX.entitlements; sourceTree = "<group>"; };
-		5F60E3B124BD24E40045A0A8 /* GTColaFlavor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTColaFlavor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F60E3D024BD27620045A0A8 /* GTCola.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTCola.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD58413247057FD00002002 /* CameoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CameoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD584162470582C00002002 /* COpenSSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = COpenSSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD584172470582C00002002 /* PerfectCHTTPParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectCHTTPParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD584182470582C00002002 /* PerfectCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD584192470582C00002002 /* PerfectCZlib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectCZlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD5841A2470582C00002002 /* PerfectHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD5841B2470582C00002002 /* PerfectHTTPServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectHTTPServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD5841C2470582C00002002 /* PerfectLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD5841D2470582C00002002 /* PerfectNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FD5841E2470582C00002002 /* PerfectThread.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectThread.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9F912824C7E171000DC0E1 /* demoart.dms */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = demoart.dms; sourceTree = "<group>"; };
 		5FDAD9B92464EFBA008E38A8 /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Async.swift; path = StarPlayrX/Model/Async.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -83,17 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FD5843D2470585800002002 /* PerfectLib.framework in Frameworks */,
-				5FD58414247057FD00002002 /* CameoKit.framework in Frameworks */,
-				5FD584412470585800002002 /* PerfectThread.framework in Frameworks */,
-				5FD584352470585800002002 /* PerfectCrypto.framework in Frameworks */,
-				5FD584392470585800002002 /* PerfectHTTP.framework in Frameworks */,
-				5FD5843F2470585800002002 /* PerfectNet.framework in Frameworks */,
-				5FD584372470585800002002 /* PerfectCZlib.framework in Frameworks */,
-				5FD5843B2470585800002002 /* PerfectHTTPServer.framework in Frameworks */,
-				5FD584312470585800002002 /* COpenSSL.framework in Frameworks */,
-				5F60E3D124BD27620045A0A8 /* GTCola.framework in Frameworks */,
-				5FD584332470585800002002 /* PerfectCHTTPParser.framework in Frameworks */,
+				5FB1763B24C668F4004918E4 /* CameoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,18 +101,6 @@
 		5F5C502A244CBE9F00A35D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F60E3D024BD27620045A0A8 /* GTCola.framework */,
-				5FD584162470582C00002002 /* COpenSSL.framework */,
-				5FD584172470582C00002002 /* PerfectCHTTPParser.framework */,
-				5FD584182470582C00002002 /* PerfectCrypto.framework */,
-				5FD584192470582C00002002 /* PerfectCZlib.framework */,
-				5FD5841A2470582C00002002 /* PerfectHTTP.framework */,
-				5FD5841B2470582C00002002 /* PerfectHTTPServer.framework */,
-				5FD5841C2470582C00002002 /* PerfectLib.framework */,
-				5FD5841D2470582C00002002 /* PerfectNet.framework */,
-				5FD5841E2470582C00002002 /* PerfectThread.framework */,
-				5FD58413247057FD00002002 /* CameoKit.framework */,
-				5F60E3B124BD24E40045A0A8 /* GTColaFlavor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,8 +130,7 @@
 		5F5C5035244CC1A100A35D76 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5F5C5042244CC22A00A35D76 /* bluenumbers.dms */,
-				5F5C5043244CC22A00A35D76 /* demoart.dms */,
+				5F9F912824C7E171000DC0E1 /* demoart.dms */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -199,8 +152,8 @@
 		5FFF9DAF244D398700D795DA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5F5C5010244CBBD300A35D76 /* Main.storyboard */,
 				5F5C5015244CBBD300A35D76 /* LaunchScreen.storyboard */,
+				5F5C5010244CBBD300A35D76 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +175,7 @@
 			);
 			name = StarPlayrX;
 			packageProductDependencies = (
+				5FB1763A24C668F4004918E4 /* CameoKit */,
 			);
 			productName = StarPlayrX;
 			productReference = 5F5C5005244CBBD300A35D76 /* StarPlayrX.app */;
@@ -252,6 +206,9 @@
 				Base,
 			);
 			mainGroup = 5F5C4FFC244CBBD300A35D76;
+			packageReferences = (
+				5FB1763924C668F4004918E4 /* XCRemoteSwiftPackageReference "CameoKit" */,
+			);
 			productRefGroup = 5F5C5006244CBBD300A35D76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,10 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F5C5017244CBBD300A35D76 /* LaunchScreen.storyboard in Resources */,
-				5F5C5044244CC22A00A35D76 /* bluenumbers.dms in Resources */,
 				5F5C5014244CBBD300A35D76 /* Assets.xcassets in Resources */,
 				5F5C5012244CBBD300A35D76 /* Main.storyboard in Resources */,
-				5F5C5045244CC22A00A35D76 /* demoart.dms in Resources */,
+				5F9F912924C7E171000DC0E1 /* demoart.dms in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +283,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -353,14 +309,15 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				ENABLE_TESTABILITY = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -373,12 +330,16 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
+				MTL_FAST_MATH = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -388,8 +349,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -414,13 +375,17 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				ENABLE_TESTABILITY = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				"GCC_OPTIMIZATION_LEVEL[arch=*]" = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -428,13 +393,16 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				VALIDATE_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -444,23 +412,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = StarPlayrX/StarPlayrX.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
-				DEVELOPMENT_TEAM = 469UCUB275;
-				HEADER_SEARCH_PATHS = "/Users/todd/CameoKit/.build/checkouts/**";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 46;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = StarPlayrX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddbruss.StarPlayr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -470,23 +443,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = StarPlayrX/StarPlayrX.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
-				DEVELOPMENT_TEAM = 469UCUB275;
-				HEADER_SEARCH_PATHS = "/Users/todd/CameoKit/.build/checkouts/**";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 46;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = StarPlayrX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddbruss.StarPlayr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -512,6 +490,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5FB1763924C668F4004918E4 /* XCRemoteSwiftPackageReference "CameoKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StarPlayrX/CameoKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5FB1763A24C668F4004918E4 /* CameoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FB1763924C668F4004918E4 /* XCRemoteSwiftPackageReference "CameoKit" */;
+			productName = CameoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F5C4FFD244CBBD300A35D76 /* Project object */;
 }

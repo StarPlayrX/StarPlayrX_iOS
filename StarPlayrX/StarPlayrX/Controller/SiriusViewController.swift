@@ -41,6 +41,9 @@ class SiriusViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Player.shared.setupRemoteTransportControls()
+
+        
          NotificationCenter.default.addObserver(self, selector: #selector(AppEnteredForeground(_:)), name: Notification.Name.willEnterForegroundNotification, object: nil)
         
         g.navBarWidth  = self.navigationController!.navigationBar.frame.width
