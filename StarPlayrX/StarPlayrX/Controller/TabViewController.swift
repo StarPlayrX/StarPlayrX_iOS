@@ -18,7 +18,7 @@ class TabController: UITabBarController {
         super.viewDidLoad()
  		
         let appearance = tabBar.standardAppearance
-s
+
         appearance.shadowImage = nil
         appearance.shadowColor = UIColor(displayP3Red: 20 / 255, green: 22 / 255, blue: 24 / 255, alpha: 1.0)
         appearance.backgroundColor = UIColor(displayP3Red: 20 / 255, green: 22 / 255, blue: 24 / 255, alpha: 1.0)

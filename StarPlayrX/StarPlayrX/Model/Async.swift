@@ -107,7 +107,7 @@ internal class Async {
                     }
                     
                     let Popular: Array<String> = [Player.shared.allStars,Player.shared.everything]
-                    var sportsTalk : Array<String> = ["Sports"]
+                    var sportsTalk : Array<String> = ["Sports Talk"]
                     var musicArray : Array<String> = ["Pop","Rock","Hip-Hop/R&B"]
                     var talkArray = Array<String>()
                     var miscArray = Array<String>()
