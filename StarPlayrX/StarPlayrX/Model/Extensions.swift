@@ -116,6 +116,8 @@ func turnOffFullScreen() {
         let windows = sharedApplication.value(forKeyPath: "windows") as? [NSObject]
     {
         for window in windows {
+            
+        
             let resizable = 3
             property("styleMask", object: window, set: [], clear: [resizable])
             let fullScreenPrimary = 7
