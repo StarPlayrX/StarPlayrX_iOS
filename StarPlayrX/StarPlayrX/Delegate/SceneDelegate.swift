@@ -15,17 +15,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-            UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.forEach { windowScene in
-                windowScene.sizeRestrictions?.minimumSize = CGSize(width: 375, height: 720)
-                windowScene.sizeRestrictions?.maximumSize = CGSize(width: 375, height: 720)
-            }
+           
         	
 
 
-
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        #if targetEnvironment(macCatalyst)
+        
+        UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.forEach { windowScene in
+            windowScene.sizeRestrictions?.minimumSize = CGSize(width: 375, height: 720)
+            windowScene.sizeRestrictions?.maximumSize = CGSize(width: 375, height: 720)
+        }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+		
+        if let titlebar = windowScene.titlebar {
+            titlebar.titleVisibility = .hidden
+            titlebar.toolbar = nil
+        }
+        #endif
+        
+        
         guard let window = window else { return }
         guard let splitViewController = window.rootViewController as? UISplitViewController else { return }
         guard let navigationController = splitViewController.viewControllers.last as? UINavigationController else { return }
