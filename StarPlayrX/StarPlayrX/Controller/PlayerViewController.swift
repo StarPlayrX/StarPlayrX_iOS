@@ -9,6 +9,7 @@
 
 import UIKit
 import AVKit
+import MediaPlayer
 
 //UIGestureRecognizerDelegate
 class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
@@ -26,17 +27,13 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
     weak var Artist       : UILabel?
     weak var Song         : UILabel?
     weak var ArtistSong   : UILabel?
-    weak var VolumeSlider : UISlider!
     weak var PlayerXL     : UIButton!
-    weak var SpeakerView  : UIImageView!
     
     var playerViewTimerX = Timer()
     var AirPlayView      = UIView()
     var AirPlayBtn       = AVRoutePickerView()
     var allStarButton    = UIButton(type: UIButton.ButtonType.custom)
     
-    var currentSpeaker = Speakers.speaker0
-    var previousSpeaker = Speakers.speaker3
     
     //other variables
     let rounder = Float(10000.0)
@@ -57,7 +54,6 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         
         self.AirPlayView.layer.add(pulseAnimation, forKey: nil)
     }
-    
     
     func noPulsar() {
         self.AirPlayView.layer.removeAllAnimations()
@@ -81,23 +77,14 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
     }
     
     
-    func startVolumeTimer() {
-        invalidateTimer()
-        self.playerViewTimerX = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(systemVolumeUpdater), userInfo: nil, repeats: true)
-    }
     
     func routePickerViewWillBeginPresentingRoutes(_ routePickerView: AVRoutePickerView) {
-        systemVolumeUpdater()
-        startVolumeTimer()
         PulsarAnimation(tune: true)
     }
     
     func routePickerViewDidEndPresentingRoutes(_ routePickerView: AVRoutePickerView) {
-        invalidateTimer()
-        systemVolumeUpdater()
         PulsarAnimation(tune: true)
     }
-    
     
     func checkForAllStar() {
         let data = g.ChannelArray
@@ -117,7 +104,7 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
     
     override func loadView() {
         super.loadView()
- 		
+        
         var isPhone = true
         var NavY = CGFloat(0)
         var TabY = CGFloat(0)
@@ -136,17 +123,17 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
             TabY = tabY
             isPhone = false
         }
-        	
+        
         drawPlayer(frame: mainView.frame, isPhone: isPhone, NavY: NavY, TabY: TabY)
     }
     
     func drawPlayer(frame: CGRect, isPhone: Bool, NavY: CGFloat, TabY: CGFloat) {
         //Instantiate draw class
-         let draw = Draw(frame: frame, isPhone: isPhone, NavY: NavY, TabY: TabY)
-            
-
+        let draw = Draw(frame: frame, isPhone: isPhone, NavY: NavY, TabY: TabY)
+        
+        
         //MARK: 1 - PlayerView must run 1st
-    	PlayerView = draw.PlayerView(mainView: mainView)
+        PlayerView = draw.PlayerView(mainView: mainView)
         
         if let pv = PlayerView {
             AlbumArt = draw.AlbumImageView(playerView: pv)
@@ -160,39 +147,22 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
                 ArtistSong = draw.ArtistSongiPad(playerView: pv)
             }
             
-            VolumeSlider = draw.VolumeSliders(playerView: pv)
-            addSliderAction()
-            
             PlayerXL = draw.PlayerButton(playerView: pv)
             PlayerXL.addTarget(self, action: #selector(PlayPause), for: .touchUpInside)
             
-            SpeakerView = draw.SpeakerImage(playerView: pv)
             updatePlayPauseIcon(play: true)
             setAllStarButton()
             
             //#if !targetEnvironment(simulator)
-            	let vp = draw.AirPlay(airplayView: AirPlayView, playerView: pv)
+            let vp = draw.AirPlay(airplayView: AirPlayView, playerView: pv)
             
-            	AirPlayBtn = vp.picker
-            	AirPlayView = vp.view
+            AirPlayBtn = vp.picker
+            AirPlayView = vp.view
             //#endif
         }
     }
     
-    func startupVolume() {
-        
-        func runsimulation() {
-            let value = Player.shared.player.volume
-            VolumeSlider.setValue(value, animated: true)
-            self.setSpeakers(value: value)
-        }
-        runsimulation()
-
-    }
     
-    func shutdownVolume() {
-            
-    }
     
     @objc func OnDidUpdatePlay(){
         DispatchQueue.main.async {
@@ -207,22 +177,12 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         }
     }
     
-    //MARK: Start Observers
-    func setVolumeObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(gotVolumeDidChange), name: .gotVolumeDidChange, object: nil)
-    }
-    
-    func removeVolumeObserver() {
-        NotificationCenter.default.removeObserver(self, name: .gotVolumeDidChange, object: nil)
-    }
-    
     func setObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(OnDidUpdatePlay), name: .didUpdatePlay, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(OnDidUpdatePause), name: .didUpdatePause, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(GotNowPlayingInfoAnimated), name: .gotNowPlayingInfoAnimated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(GotNowPlayingInfo), name: .gotNowPlayingInfo, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gotVolumeDidChange), name: .gotVolumeDidChange, object: nil)
     }
     
     func removeObservers() {
@@ -231,7 +191,6 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         NotificationCenter.default.removeObserver(self, name: .gotNowPlayingInfoAnimated, object: nil)
         NotificationCenter.default.removeObserver(self, name: .gotNowPlayingInfo, object: nil)
         NotificationCenter.default.removeObserver(self, name: .willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .gotVolumeDidChange, object: nil)
     }
     //MARK: End Observers
     
@@ -315,12 +274,6 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         setObservers()
         doubleTap()
         AirPlayBtn.delegate = self
-        
-        #if targetEnvironment(simulator)
-        	let value = Player.shared.player.volume
-        	VolumeSlider.setValue(value, animated: true)
-        	self.setSpeakers(value: value)
-        #endif
     }
     
     @objc func GotNowPlayingInfoAnimated() {
@@ -383,21 +336,21 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
                 self.AlbumArt.layer.shadowOpacity = 1.0
                 
                 for i in labels {
-                   i.lbl?.text = i.str
+                    i.lbl?.text = i.str
                 }
                 
             } else {
                 DispatchQueue.main.async {
                     //iPad
                     if let artistSong = self.ArtistSong {
-                		presentArtistSongAlbumArt(artistSong, duration: duration)
-                    //iPhone
+                        presentArtistSongAlbumArt(artistSong, duration: duration)
+                        //iPhone
                     } else if let artist = self.Artist {
                         presentArtistSongAlbumArt(artist, duration: duration)
                     }
                 }
             }
-       
+            
         }
         
         if animated {
@@ -431,7 +384,6 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
     
     
     func startup() {
-        startupVolume()
         PulsarAnimation(tune: false)
     }
     
@@ -439,16 +391,13 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         if let _  = Artist?.text?.isEmpty {
             Player.shared.syncArt()
         }
-    
+        
         title = g.currentChannelName
         startup()
         checkForAllStar()
-        isSliderEnabled()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        shutdownVolume()
-        
         UIView.transition(with: self.AlbumArt,
                           duration:0.4,
                           options: .transitionCrossDissolve,
@@ -461,168 +410,15 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
         removeObservers()
     }
     
-    //MARK: Speaker Volume with Smooth Frame Animation
-    func setSpeakers(value: Float) {
-        self.previousSpeaker = self.currentSpeaker
-        switch (value) {
-            case 0 :
-                self.currentSpeaker = .speaker0
-            case 0..<0.1 :
-                self.currentSpeaker = .speaker1
-            case 0.1..<0.2 :
-                self.currentSpeaker = .speaker2
-            case 0.2..<0.3 :
-                self.currentSpeaker = .speaker3
-            case 0.3..<0.4 :
-                self.currentSpeaker = .speaker4
-            case 0.4..<0.5 :
-                self.currentSpeaker = .speaker5
-            case 0.5..<0.6 :
-                self.currentSpeaker = .speaker6
-            case 0.6..<0.7 :
-                self.currentSpeaker = .speaker7
-            case 0.7..<0.8 :
-                self.currentSpeaker = .speaker8
-            case 0.8..<0.9 :
-                self.currentSpeaker = .speaker9
-            case 0.9...1.0 :
-                self.currentSpeaker = .speaker10
-            
-            default :
-                self.currentSpeaker = .speaker0
-        }
-        
-        if self.previousSpeaker != self.currentSpeaker || value == 0.0 {
-            let speakerName = self.currentSpeaker.rawValue
-            
-            UIView.transition(with: self.SpeakerView,
-                              duration:0.2,
-                              options: .transitionCrossDissolve,
-                              animations: { self.SpeakerView.image = UIImage(named: speakerName) },
-                              completion: nil)
-        
-            self.previousSpeaker = self.currentSpeaker
-        }
-    }
-    
-    
-    //MARK: Adjust the volume
-    @objc func VolumeChanged(slider: UISlider, event: UIEvent) {
-        
-        if let touchEvent = event.allTouches?.first {
-            switch touchEvent.phase {
-                case .began:
-                    removeVolumeObserver()
-                
-                case .moved:
-                    DispatchQueue.main.async {
-                        let value = slider.value
-                        self.setSpeakers(value: value)
-
-                        Player.shared.player.volume = value
-
-                	}
-                case .ended:
-                    setVolumeObserver()
-                default:
-                    return
-            }
-        }
-    }
-    
-    
-    //MARK: Add Volume Slider Action
-    func addSliderAction() {
-        VolumeSlider.addTarget(self, action: #selector(VolumeChanged(slider:event:)), for: .valueChanged)
-    }
-    
-    
-    //MARK: Remove Volume Slider Action
-    func removeSlider() {
-        VolumeSlider.removeTarget(nil, action: #selector(VolumeChanged(slider:event:)), for: .valueChanged)
-    }
-    
-    
-    @objc func gotVolumeDidChange(_ notification: NSNotification) {
-        if sliderIsMoving { return }
-        if let volume = notification.userInfo?["AVSystemController_AudioVolumeNotificationParameter"] as? Float {
-            
-            if Player.shared.avSession.currentRoute.outputs.first?.portType == .airPlay {
-                
-            
-            }
-            
-            
-            #if !targetEnvironment(simulator)
-            if !g.demomode {
-                let slider = VolumeSlider.value
-                
-                let roundedSlider = round(rounder * slider) / rounder
-                let roundedVolume = round(rounder * volume) / rounder
-                
-                if roundedSlider != roundedVolume {
-                    
-                    DispatchQueue.main.async {
-                        self.VolumeSlider.setValue(volume, animated: true)
-                    }
-                }
-            }
-            #endif
-            
-         
-            
-        } else {
-            //This creates a one time loop back if volume comes back nil
-            #if !targetEnvironment(simulator)
-            if !g.demomode {
-                systemVolumeUpdater()
-            }
-            #endif
-        }
-    }
-    
-    
-    @objc func systemVolumeUpdater() {
-        switch UIApplication.shared.applicationState {
-            
-            case .active:
-                airplayRunner()
-            case .background:
-                airplayRunner()
-            default:
-                ()
-        }
-    }
-    
-    
-    func isSliderEnabled() {
-        if Player.shared.avSession.currentRoute.outputs.first?.portType == .usbAudio  {
-            VolumeSlider.isEnabled = false
-        } else {
-            VolumeSlider.isEnabled = true
-        }
-        
-        #if !targetEnvironment(simulator)
-        if g.demomode {
-            if Player.shared.avSession.currentRoute.outputs.first?.portType == .airPlay  {
-                VolumeSlider.isEnabled = false
-            } else {
-                VolumeSlider.isEnabled = true
-            }
-        }
-        #endif
-    }
-    
     
     func airplayRunner() {
         if tabBarController?.tabBar.selectedItem?.title == channelString && title == g.currentChannelName {
             if Player.shared.avSession.currentRoute.outputs.first?.portType == .airPlay {
                 
             } else {
-               
+                
             }
             
-            isSliderEnabled()
         }
     }
     
@@ -638,4 +434,3 @@ class PlayerViewController: UIViewController, AVRoutePickerViewDelegate  {
     }
     
 }
-

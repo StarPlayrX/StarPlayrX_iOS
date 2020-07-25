@@ -101,7 +101,7 @@ final class Draw {
     }
     
     //MARK: 5 - Draw Volume Slider
-    func VolumeSliders(playerView: UIView) -> UISlider {
+    func VolumeSliders(playerView: UIView) -> UIView {
         let volumeSlider = self.drawVolumeSlider(playerView: playerView, centerX: centerX, centerY: positionBottom, rectX: 0, rectY: 0, width: sliderWidth, height: labelHeight)
 		
         return volumeSlider
@@ -109,7 +109,7 @@ final class Draw {
     
     //MARK: 6 - Draw Player button
     func PlayerButton(playerView: UIView) -> UIButton {
-        let player = self.drawButtons(playerView: playerView, centerX: centerX, centerY: positionBottom - playPauseY, rectX: 0, rectY: 0, width: buttonSize * playPauseScale, height: buttonSize * playPauseScale, wire: false)
+        let player = self.drawButtons(playerView: playerView, centerX: centerX, centerY: positionBottom - playPauseY, rectX: 0, rectY: 0, width: buttonSize * playPauseScale, height: labelHeight, wire: false)
         return player
     }
     
@@ -122,7 +122,7 @@ final class Draw {
     //MARK: 8 - Draw AirPlay Button
     func AirPlay(airplayView: UIView, playerView: UIView) -> (view: UIView, picker: AVRoutePickerView ) {
         
-        let vp = self.drawAirPlay(airplayView: airplayView, playerView: playerView, centerX: playerView.frame.size.width - buttonOffset, centerY: positionBottom, rectX: 0, rectY: 0, width: airplaySize, height: airplaySize, wire: false)
+        let vp = self.drawAirPlay(airplayView: airplayView, playerView: playerView, centerX: playerView.frame.size.width - buttonOffset, centerY: positionBottom - (playPauseY / 1.5), rectX: 0, rectY: 0, width: airplaySize, height: airplaySize, wire: false)
     
         return vp
     }
@@ -149,59 +149,16 @@ final class Draw {
         //Drawing code constants
         switch iPhoneHeight {
             
-            //iPhone 11 Pro Max
-            case 896.0 :
-                labelOffset = 180
-                labelOffset2 = 86
-                labelHeight = 90
-                fontSize = 18
-                iPadAlbumClearSpace = 0
-                iPadTabHeightFactor = 0
-                playPauseY = 77
-                playPauseScale = 2
-            
-            //iPhone 11 Pro / iPhone X
-            case 812.0 :
-                labelOffset = 152
-                labelOffset2 = 70
-                labelHeight = 90
-                fontSize = 18
-                iPadAlbumClearSpace = 0
-                iPadTabHeightFactor = 0
-                playPauseY = 65
-                playPauseScale = 2
-            
-            //iPhone 8 Plus
-            case 736.0 :
+            //MacCatalyst
+            case 720.0 :
                 labelOffset = 100
                 labelOffset2 = 10
                 labelHeight = 60
                 fontSize = 16.5
                 iPadAlbumClearSpace = 0
                 iPadTabHeightFactor = 0
-                playPauseY = 70
+                playPauseY = 25
                 playPauseScale = 2
-            
-            //iPhone 7/8/SE 2nd Gen
-            case 667.0 :
-                labelOffset = 80
-                labelOffset2 = 0
-                labelHeight = 60
-                fontSize = 16
-                iPadAlbumClearSpace = 0
-                iPadTabHeightFactor = 0
-                playPauseY = 60
-                playPauseScale = 1.7
-            //iPhone SE 1st Gen
-            case 568.0 :
-                labelOffset = 47
-                labelOffset2 = -13
-                labelHeight = 30
-                fontSize = 14
-                iPadAlbumClearSpace = 0
-                iPadTabHeightFactor = 0
-                playPauseY = 50
-                playPauseScale = 1.334
             //iPad Pro 12.9"
             case 1024.0 :
                 labelOffset = 45
@@ -268,24 +225,18 @@ final class Draw {
         }
         
         mainView.addSubview(drawView)
-        
+        print(iPhoneHeight, isPhone)
+
         //MARK: Common constants - for iPhone and iPad
         switch (iPhoneHeight, isPhone) {
-            
             //MARK: iPhone X and higher
-            case (812.0,true), (896.0,true) :
+
+            //MARK: MacCatalyst
+            case (720.0,true) :
                 AlbumArtSizeX = drawView.frame.size.width
                 AlbumArtSizeY = drawView.frame.size.height
                 centerX = drawView.frame.size.width / 2
-                centerY = drawView.frame.size.height / 2 - iPhoneOffset
-                positionBottom = CGFloat( drawView.frame.size.height - 30 )
-            
-            //MARK: Regular iPhones (SE1 / 8 / 8 Plus)
-            case (568.0,true), (667.0,true), (736.0,true) :
-                AlbumArtSizeX = drawView.frame.size.width - 60
-                AlbumArtSizeY = drawView.frame.size.height - 60
-                centerX = drawView.frame.size.width / 2
-                centerY = drawView.frame.size.height / 2 - iPhoneOffset
+                centerY = drawView.frame.size.height / 2 + 20
                 positionBottom = CGFloat( drawView.frame.size.height - 25 )
             
             //MARK: iPad
@@ -299,10 +250,10 @@ final class Draw {
             default:
                 //defaults to Regular
                 if isPhone {
-                    AlbumArtSizeX = drawView.frame.size.width - 60
-                    AlbumArtSizeY = drawView.frame.size.height - 60
+                    AlbumArtSizeX = drawView.frame.size.width
+                    AlbumArtSizeY = drawView.frame.size.height
                     centerX = drawView.frame.size.width / 2
-                    centerY = drawView.frame.size.height / 2 - iPhoneOffset
+                    centerY = drawView.frame.size.height / 2 + 20
                     positionBottom = CGFloat( drawView.frame.size.height - 25 )
                 } else {
                     //iPad
@@ -363,18 +314,18 @@ final class Draw {
     
     
     //MARK: Draw VolumeSlider
-    func drawVolumeSlider(playerView: UIView, centerX: CGFloat, centerY: CGFloat, rectX: CGFloat, rectY: CGFloat, width: CGFloat, height: CGFloat) -> UISlider {
+    func drawVolumeSlider(playerView: UIView, centerX: CGFloat, centerY: CGFloat, rectX: CGFloat, rectY: CGFloat, width: CGFloat, height: CGFloat) -> UIView {
         
-        let slider = UISlider(frame:CGRect(x: rectX, y: rectY, width: width, height: height))
+        let slider = UIView(frame:CGRect(x: rectX, y: rectY, width: width, height: height))
         slider.center = CGPoint(x: centerX, y: centerY)
         
-        slider.minimumValue = 0
-        slider.maximumValue = 1
-        slider.isContinuous = true
+        //slider.minimumValue = 0
+        //slider.maximumValue = 1
+        //slider.isContinuous = true
         slider.tintColor = .systemBlue
-        
-        slider.setThumbImage(UIImage(named: "knob"), for: .normal)
-        slider.setThumbImage(UIImage(named: "knob"), for: .highlighted)
+        slider.backgroundColor = .red
+        //slider.setThumbImage(UIImage(named: "knob"), for: .normal)
+        //slider.setThumbImage(UIImage(named: "knob"), for: .highlighted)
         
         //mySlider.addTarget(self, action: #selector(ViewController.sliderValueDidChange(_:)), for: .valueChanged)
         

@@ -60,6 +60,8 @@
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<false/>
+	<key>UIStatusBarHidden~ipad</key>
+	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIStatusBarTintParameters</key>

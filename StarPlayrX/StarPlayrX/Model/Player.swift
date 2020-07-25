@@ -252,6 +252,8 @@ final class Player {
     //MARK: Todd
     func updateNowPlayingX(_ animated: Bool = true) {
         
+        //        appearance.backgroundColor = UIColor(displayP3Red: 20 / 255, green: 22 / 255, blue: 24 / 255, alpha: 1.0)
+
         let g = Global.obj
         
         func demoImage() -> UIImage? {
