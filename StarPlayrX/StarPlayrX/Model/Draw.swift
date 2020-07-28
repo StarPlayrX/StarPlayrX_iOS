@@ -150,7 +150,7 @@ final class Draw {
         switch iPhoneHeight {
             
             //MacCatalyst
-            case 720.0 :
+            case 718...722.0 :
                 labelOffset = 100
                 labelOffset2 = 10
                 labelHeight = 60
@@ -232,7 +232,7 @@ final class Draw {
             //MARK: iPhone X and higher
 
             //MARK: MacCatalyst
-            case (720.0,true) :
+            case (718.0...722.0,true) :
                 AlbumArtSizeX = drawView.frame.size.width
                 AlbumArtSizeY = drawView.frame.size.height
                 centerX = drawView.frame.size.width / 2
