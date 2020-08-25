@@ -414,9 +414,9 @@
 				CODE_SIGN_ENTITLEMENTS = StarPlayrX/StarPlayrX.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 48;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 469UCUB275;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = StarPlayrX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -445,9 +445,9 @@
 				CODE_SIGN_ENTITLEMENTS = StarPlayrX/StarPlayrX.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 48;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 469UCUB275;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = StarPlayrX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
